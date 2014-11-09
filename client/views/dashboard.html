@@ -1,0 +1,29 @@
+<template name='dashboard'>
+{{>menu}}
+{{> dashboard_content }}
+</template>
+
+<template name='menu'>
+	<ul>
+	    {{#if currentUser}}
+	    	<li>Dashboard</li>
+	    	<li>Profile</li>
+	    	<li>Job list</li>
+	    	<li>Messages</li>
+	    {{/if}}
+		<li>Advanced search</li>
+		<li>About</li>
+		<li>Statistics</li>
+		<li>Blog</li>
+		{{> loginButtons}}
+	</ul>
+</template>
+
+<template name='dashboard_content'>
+	    {{#if currentUser}}
+	    	<button id="refresh_profile">Fetch/Refresh profile</button>
+	    {{/if}}
+
+	    {{> profile}}
+</template>
+

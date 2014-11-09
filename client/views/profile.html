@@ -1,0 +1,25 @@
+<template name="profile">
+    <h3>My profile </h3>
+    {{#with profile}}
+      <h3>{{firstName}}</h3>
+      <h3>{{headline}}</h3>
+      {{#with educations}}
+        {{> educations}}
+      {{/with}}
+    {{/with}}
+</template>
+
+<template name="educations">
+<h1>Educations</h1>
+{{#each values}}
+  {{> education}}
+{{/each}}
+</template>
+
+<template name="education">
+<h3>{{degree}}</h3>
+<h3>{{schoolName}}</h3>
+<h3>{{fieldOfStudy}}</h3>
+<p>{{notes}}</p>
+
+</template>

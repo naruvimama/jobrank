@@ -1,0 +1,21 @@
+<template name='home'>
+	{{#if currentUser}}
+		{{> dashboard}}
+	{{else}}
+		{{> signup}}
+	{{/if}}
+</template>
+
+<template name='signup'>
+	{{> menu}}
+	{{> search}}
+	{{> front_signin_buttons}}
+</template>
+
+<template name='front_signin_buttons'>
+	<label>Sign in with Linkedin</label>
+  {{> loginButtons}}
+</template>
+
+<template name='search'>
+</template>
