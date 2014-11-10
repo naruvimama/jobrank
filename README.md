@@ -7,7 +7,13 @@ How to start
 ============
 
 1. Install Meteor
-    curl https://install.meteor.com/ | sh
+   
+   ```
+   curl https://install.meteor.com/ | sh
+   ```
 
 2. Run the app server
-    meteor
+   
+   ```
+   meteor
+   ```
