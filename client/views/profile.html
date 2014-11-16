@@ -27,9 +27,7 @@
 </template>
 
 <template name="education">
-{{#if statDate}}
-  <h3>{{startDate.year}} - {{endDate.year}}</h3>
-{{/if}}
+{{>date_template_partial}}
 <h3>{{degree}}</h3>
 <h3>{{schoolName}}</h3>
 <h3>{{fieldOfStudy}}</h3>
@@ -46,5 +44,32 @@
 
 <template name="current_position">
 <h4>{{title}}</h4>
-<h4>Start date : {{startDate.month}} - {{startDate.year}}</h4>
+{{>date_template_partial}}
+</template>
+
+<template name="date_template_partial">
+  <h4>
+    {{#if startDate || endDate}}
+    Period :
+  {{/if}}
+  {{#if startDate}}
+      {{#if startDate.month}}
+        {{startDate.month}} -
+      {{/if}}
+      {{#if startDate.year}}
+        {{startDate.year}}
+      {{/if}}
+      -
+  {{/if}}
+  {{#if endDate}}
+      {{#if endDate.month}}
+        {{endDate.month}} -
+      {{/if}}
+      {{#if endDate.year}}
+        {{endDate.year}}
+      {{/if}}
+  {{else}}
+    Present
+  {{/if}}
+  </h4>
 </template>
