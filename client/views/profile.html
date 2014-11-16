@@ -12,6 +12,9 @@
         {{#with threeCurrentPositions}}
           {{> threeCurrentPositions}}
         {{/with}}
+        {{#with threePastPositions}}
+          {{> threePastPositions}}
+        {{/with}}
       {{/if}}
       {{#with educations}}
         {{> educations}}
@@ -36,15 +39,23 @@
 </template>
 
 <template name="threeCurrentPositions">
-<h2>Current position</h2>
+<h2>Current positions</h2>
 {{#each values}}
-  {{> current_position}}
+  {{> position}}
 {{/each}}
 </template>
 
-<template name="current_position">
+<template name="threePastPositions">
+<h2>Past positions</h2>
+{{#each values}}
+  {{> position}}
+{{/each}}
+</template>
+
+<template name="position">
 <h4>{{title}}</h4>
 {{>date_template_partial}}
+<p>{{summary}}</p>
 </template>
 
 <template name="date_template_partial">
